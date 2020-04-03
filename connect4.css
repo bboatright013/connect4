@@ -1,0 +1,79 @@
+/* game board table */
+body {
+  margin: 0;
+  background-image: url('./img/heroBG.jpg');
+  background-repeat: no-repeat;
+  background-position:center center;
+  background-size: cover;
+
+}
+
+#board td {
+  width: 50px;
+  height: 50px;
+  /* border: solid 5px #ffd900; */
+  background-color: #fff;
+  border-radius: 50%;
+  z-index: 1;
+  position: relative;
+}
+#board {
+  background-color: #ffd900;
+  margin:15% auto;
+}
+
+
+/* pieces are div within game table cells: draw as colored circles */
+
+.piece {
+  /* TODO: make into circles */
+  border-radius: 50%;
+  /* margin: 5px; */
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  transition: all .8s  ease-in .2s;
+  top: 1%;
+
+  animation-duration: 1s;
+  animation-name: drop;
+}
+
+.p1 {
+  background-color: red;
+  /* transition: all .8s  ease-in 1s; */
+
+}
+.p2 {
+  background-color: blue;
+  /* transition: all .8s ease-in 1s; */
+}
+
+@keyframes drop {
+  from {
+    top: -1000px;
+  }
+  to {
+    top: 1%;
+  }
+}
+/* TODO: make pieces red/blue,  depending on player 1/2 piece */
+
+/* column-top is table row of clickable areas for each column */
+
+#column-top td {
+  /* border: dashed 1px lightgray; */
+  /* background-color:white; */
+  border-radius: 0%;
+
+}
+#column-top {
+  background-color:white;
+}
+
+
+#column-top td:hover {
+  background-color: rgba(255,217,0, .4);
+  /* background-color: greenyellow; */
+
+}
